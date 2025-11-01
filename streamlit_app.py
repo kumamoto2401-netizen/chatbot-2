@@ -69,7 +69,19 @@ else:
                     api_history.append({"role": role, "parts": [msg["content"]]})
 
                 # 2. モデルとチャットセッションを初期化
-                chat_model = genai.GenerativeModel(model)
+                # 安全性設定を「すべてブロックしない」に設定 (finish_reason 2 エラー対策)
+                # 注意: これは安全フィルターを無効にします。
+                safety_settings = {
+    "HARM_CATEGORY_HARASSMENT": "BLOCK_NONE",
+    "HARM_CATEGORY_HATE_SPEECH": "BLOCK_NONE",
+    "HARM_CATEGORY_SEXUALLY_EXPLICIT": "BLOCK_NONE",
+    "HARM_CATEGORY_DANGEROUS_CONTENT": "BLOCK_NONE",
+                }
+
+                chat_model = genai.GenerativeModel(
+                model,
+                safety_settings=safety_settings
+                )
                 chat_session = chat_model.start_chat(history=api_history)
 
                 # 3. 生成設定 (temperatureなど)
