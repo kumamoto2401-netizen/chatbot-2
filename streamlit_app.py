@@ -24,7 +24,8 @@ else:
         "Model",
         options=[
             "gemini-1.5-pro-latest",
-            "gemini-pro",
+            "gemini-2.5-pro",
+            "gemini-2.5-flash",
             "models/chat-bison-001", # PaLM 2 (Legacy)
         ],
         index=0,
