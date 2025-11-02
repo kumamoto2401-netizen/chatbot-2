@@ -70,8 +70,6 @@ else:
             "model": model_name,
             "messages": claude_messages,
             "max_tokens": 4096, # Claude APIでは必須。適切な値を設定 (例: 4096)
-            "temperature": 0.7,
-            "top_p": 0.8
         }
 
         try:
