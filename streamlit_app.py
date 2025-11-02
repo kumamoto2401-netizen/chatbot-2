@@ -17,8 +17,8 @@ else:
     model_name = st.selectbox(
         "使用する Claude モデルを選択",
         (
-            "claude-3-5-sonnet", # 高速でコスト効率が良い高性能モデル
-            "claude-3-opus"      # 最もインテリジェントなモデル
+            "claude-sonnet-4-5", # 最もインテリジェントなモデル
+            "claude-haiku-4-5"      
         )
     )
  
