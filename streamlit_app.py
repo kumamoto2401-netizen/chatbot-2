@@ -60,7 +60,7 @@ else:
 
         # ヘッダーに Content-Type と APIキー、および Anthropic のバージョンを含める
         headers = {
-            "Content-Type": "application/json",
+            "content-type": "application/json",
             "x-api-key": claude_api_key, 
             "anthropic-version": "2023-06-01" 
         }
