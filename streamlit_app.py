@@ -17,7 +17,7 @@ else:
     model_name = st.selectbox(
         "使用する Claude モデルを選択",
         (
-            "claude-sonnet-4-5", # 最もインテリジェントなモデル
+            "claude-sonnet-4-5",
             "claude-haiku-4-5"      
         )
     )
@@ -61,9 +61,7 @@ else:
         # ヘッダーに Content-Type と APIキー、および Anthropic のバージョンを含める
         headers = {
             "Content-Type": "application/json",
-            # APIキーのヘッダー名が変更
             "x-api-key": claude_api_key, 
-            # 必須の Anthropic API バージョンヘッダー
             "anthropic-version": "2023-06-01" 
         }
         
